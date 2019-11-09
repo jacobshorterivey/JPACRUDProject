@@ -5,9 +5,9 @@ import java.util.List;
 import com.skilldistillery.videogames.entities.VideoGame;
 
 public interface VideoGameDAO {
-	boolean createGame(VideoGame videogame);
+	VideoGame createGame(VideoGame vg);
 	VideoGame findById(int id);
-	void updateGame(int id);
+	VideoGame updateGame(int old,  VideoGame fresh);
 	void removeGame(int id);
 	List<VideoGame> findAll();
 }

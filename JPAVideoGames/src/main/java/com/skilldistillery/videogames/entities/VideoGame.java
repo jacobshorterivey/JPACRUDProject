@@ -32,6 +32,21 @@ public class VideoGame {
 		super();
 	}
 	
+	public VideoGame(String title, String developer, String publisher, String description, String esrbRating,
+			Integer metacriticScore, LocalDate releaseDate, String boxartURL) {
+		super();
+		this.title = title;
+		this.developer = developer;
+		this.publisher = publisher;
+		this.description = description;
+		this.esrbRating = esrbRating;
+		this.metacriticScore = metacriticScore;
+		this.releaseDate = releaseDate;
+		this.boxartURL = boxartURL;
+	}
+
+
+
 	//METHODS
 	
 	public int getId() {

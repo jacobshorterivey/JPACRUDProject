@@ -24,26 +24,40 @@ public class VideoGameDAOImpl implements VideoGameDAO {
 
 	@Override
 	public List<VideoGame> findAll() {
-		String query = "SELECT fm FROM Film fm";
+		String query = "SELECT vg FROM VideoGame vg";
 		List<VideoGame> allGames = em.createQuery(query, VideoGame.class).getResultList();
 		return allGames;
 	}
 
 	@Override
-	public boolean createGame(VideoGame videogame) {
-		// TODO Auto-generated method stub
-		return false;
+	public VideoGame createGame(VideoGame vg) {
+
+		em.persist(vg);
+		em.flush();
+
+		return vg;
 	}
 
 	@Override
-	public void updateGame(int id) {
-		// TODO Auto-generated method stub
+	public VideoGame updateGame(int old, VideoGame fresh) {
+		VideoGame vg = em.find(VideoGame.class, old);
+		vg.setTitle(fresh.getTitle());
+		vg.setDeveloper(fresh.getDeveloper());
+		vg.setPublisher(fresh.getPublisher());
+		vg.setDescription(fresh.getDescription());
+		vg.setEsrbRating(fresh.getEsrbRating());
+		vg.setMetacriticScore(fresh.getMetacriticScore());
+		vg.setReleaseDate(fresh.getReleaseDate());
+		vg.setBoxartURL(fresh.getBoxartURL());
 		
+		return vg;
 	}
 
 	@Override
 	public void removeGame(int id) {
-		// TODO Auto-generated method stub
-		
+		VideoGame vg = em.find(VideoGame.class, id);
+
+		em.remove(vg);
+		em.flush();
 	}
 }
