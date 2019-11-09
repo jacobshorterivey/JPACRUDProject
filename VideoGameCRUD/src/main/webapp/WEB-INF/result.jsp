@@ -9,21 +9,30 @@
 <title>Search Results</title>
 </head>
 <body>
-	<c:if test="${game == null}">
-		<h1>No game found. Please go back and try again.</h1>
-	</c:if>
-	<c:if test="${game != null}">
-		<h1>${game.title }</h1>
-		<img alt="${game.title } box art" src="${game.boxartURL }" height="100" width="100">
-		<ul>
-			<li>ID: ${game.id}</li>
-			<li>Description: ${game.description}</li>
-			<li>Metacritic Score: ${game.metacriticScore}</li>
-			<li>Developer: ${game.developer}</li>
-			<li>Publisher: ${game.publisher}</li>
-			<li>ESRB Rating: ${game.esrbRating}</li>
-			<li>Release Year: ${game.releaseDate}</li>
-		</ul>
+	<div>
+		<c:if test="${game == null}">
+			<h1>No game found. Please go back and try again.</h1>
 		</c:if>
+		<c:if test="${game != null}">
+			<h1>${game.title }</h1>
+			<img alt="${game.title } box art" src="${game.boxartURL }"
+				height="300" width="325">
+			<ul>
+				<li>ID: ${game.id}</li>
+				<li>Description: ${game.description}</li>
+				<li>Metacritic Score: ${game.metacriticScore}</li>
+				<li>Developer: ${game.developer}</li>
+				<li>Publisher: ${game.publisher}</li>
+				<li>ESRB Rating: ${game.esrbRating}</li>
+				<li>Release Year: ${game.releaseDate}</li>
+			</ul>
+			<form action="" method="POST">
+				<!-- 			<input type="submit" formaction="destroyGame.do" value="Delete Game"> -->
+				<button type="submit" formaction="destroyGame.do" name="gameId"
+					value="${game.id}">Delete Game</button>
+			</form>
+
+		</c:if>
+	</div>
 </body>
 </html>

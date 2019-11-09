@@ -11,16 +11,24 @@
 <body>
 	<h1>Jacob's Video Game DB</h1>
 
-	<form action="findGameById.do" class="" method="GET">
-			<label>Find a Game by ID: </label> <input type="text" name="gameId"> <br />
-		<input type="submit" value="Search">
-	</form>
-	<h2>Games in Our Database</h2>
-	<c:forEach var="game" items="${games}">
-		
-		<a href="findGameById.do?gameId=${game.id }"><img src="${game.boxartURL }" alt="${game.title }'s boxart" height="250" width="200"></a>
-	</c:forEach>
+	<div>
+		<form action="findGameById.do" class="" method="GET">
+			<input type="text" name="gameId"> <input type="submit" value="Find Game by ID">
+		</form>
+		<form action="goToCreateGame.do" class="" method="GET">
+			<input type="submit" value="Add a Game">
+		</form>
 	
-	
+	</div>
+	<div>
+		<h2>Games in Our Database</h2>
+		<c:forEach var="game" items="${games}">
+
+			<a href="findGameById.do?gameId=${game.id }"><img
+				src="${game.boxartURL }" alt="${game.title }'s boxart" height="230"
+				width="200"></a>
+		</c:forEach>
+	</div>
+
 </body>
 </html>
