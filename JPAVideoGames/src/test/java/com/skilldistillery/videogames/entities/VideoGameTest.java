@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -54,6 +56,20 @@ class VideoGameTest {
 	void test1() {
 		assertNotNull(vg);
 		assertEquals("Dragon Age: Origins", vg.getTitle());
+	}
+	@Test
+	@DisplayName("testing date functionality")
+	void test2() {
+		assertNotNull(vg);
+		assertEquals("2009-11-03", vg.getReleaseDate().toString());
+	}
+	@Test
+	@DisplayName("testing list functionality")
+	void test3() {
+		assertNotNull(vg);
+		String query = "SELECT vg FROM VideoGame vg ORDER BY vg.id";
+		List<VideoGame> allGames = em.createQuery(query, VideoGame.class).getResultList();
+		assertEquals(allGames.get(0), vg);
 	}
 
 }

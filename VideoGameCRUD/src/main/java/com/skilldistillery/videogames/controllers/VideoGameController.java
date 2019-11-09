@@ -4,13 +4,16 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.videogames.DAO.VideoGameDAO;
 import com.skilldistillery.videogames.entities.VideoGame;
 
+@Controller
 public class VideoGameController {
 	@Autowired
 	private VideoGameDAO dao;
@@ -26,7 +29,7 @@ public class VideoGameController {
 	}
 
 	@RequestMapping(path = "findGameById.do")
-	public ModelAndView findVideoGameById(@RequestParam("id") int id) {
+	public ModelAndView findVideoGameById(@RequestParam("gameId") int id) {
 		ModelAndView mv = new ModelAndView();
 		VideoGame vg = dao.findById(id);
 		mv.addObject("game", vg);
@@ -34,7 +37,7 @@ public class VideoGameController {
 		return mv;
 	}
 
-	@RequestMapping(path = "createGame.do")
+	@RequestMapping(path = "createGame.do", method = RequestMethod.POST)
 	public ModelAndView addVideoGame(@RequestParam("title") String title, @RequestParam("developer") String developer,
 			@RequestParam("publisher") String publisher, @RequestParam("description") String description,
 			@RequestParam("esrbRating") String esrbRating, @RequestParam("metacriticScore") Integer metacriticScore,
@@ -48,7 +51,7 @@ public class VideoGameController {
 		return mv;
 	}
 
-	@RequestMapping(path = "updateGame.do")
+	@RequestMapping(path = "updateGame.do", method = RequestMethod.POST)
 	public ModelAndView updateVideoGame(@RequestParam("id") int oldId, @RequestParam("title") String title,
 			@RequestParam("developer") String developer, @RequestParam("publisher") String publisher,
 			@RequestParam("description") String description, @RequestParam("esrbRating") String esrbRating,
@@ -63,7 +66,7 @@ public class VideoGameController {
 		return mv;
 	}
 
-	@RequestMapping(path = "destroyGame.do")
+	@RequestMapping(path = "destroyGame.do", method = RequestMethod.POST)
 	public ModelAndView destroyVideoGame(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
 		dao.removeGame(id);
