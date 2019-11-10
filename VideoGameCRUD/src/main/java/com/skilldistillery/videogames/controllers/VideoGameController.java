@@ -62,14 +62,17 @@ public class VideoGameController {
 	}
 
 	@RequestMapping(path = "updateGame.do", method = RequestMethod.POST)
-	public ModelAndView updateVideoGame(@RequestParam("gameId") int oldId, @RequestParam("title") String title,
+	public ModelAndView updateVideoGame(@RequestParam("oldGameId") int oldId, @RequestParam("title") String title,
 			@RequestParam("developer") String developer, @RequestParam("publisher") String publisher,
 			@RequestParam("description") String description, @RequestParam("esrbRating") String esrbRating,
 			@RequestParam("metacriticScore") Integer metacriticScore,
-			@RequestParam("releaseDate") LocalDate releaseDate, @RequestParam("boxartURL") String boxartURL) {
+			@RequestParam("releaseDate") String releaseDate, @RequestParam("boxartURL") String boxartURL) {
 		ModelAndView mv = new ModelAndView();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDate parsedReleaseDate = LocalDate.parse(releaseDate, formatter);
+		
 		VideoGame fresh = new VideoGame(title, developer, publisher, description, esrbRating, metacriticScore,
-				releaseDate, boxartURL);
+				parsedReleaseDate, boxartURL);
 		fresh = dao.updateGame(oldId, fresh);
 		mv.addObject("game", fresh);
 		mv.setViewName("result");
