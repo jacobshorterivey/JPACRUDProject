@@ -31,7 +31,7 @@
 								<p>Developer: ${game.developer}</p>
 								<p>Publisher: ${game.publisher}</p>
 								<p>ESRB Rating: ${game.esrbRating}</p>
-								<p>Release Year: ${game.releaseDate}</p>
+								<p>Release Date: ${game.releaseDate}</p>
 								<button data-toggle="collapse" data-target="#editform">Edit Game</button>
 						</div>
 						<div class="col-2">
