@@ -20,7 +20,9 @@
 			<h1>${game.title }</h1>
 			<img alt="${game.title } box art" src="${game.boxartURL }"
 				height="340" width="300">
-			<ul>
+<p>
+
+			<%-- <ul>
 				<li>ID: ${game.id}</li>
 				<li>Description: ${game.description}</li>
 				<li>Metacritic Score: ${game.metacriticScore}</li>
@@ -28,7 +30,38 @@
 				<li>Publisher: ${game.publisher}</li>
 				<li>ESRB Rating: ${game.esrbRating}</li>
 				<li>Release Year: ${game.releaseDate}</li>
-			</ul>
+			</ul> --%>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-2">
+					</div>
+					<div class="col-8">
+							<p>ID: ${game.id}</p>
+							<p>Description: ${game.description}</p>
+							<p>Metacritic Score: ${game.metacriticScore}</p>
+							<p>Developer: ${game.developer}</p>
+							<p>Publisher: ${game.publisher}</p>
+							<p>ESRB Rating: ${game.esrbRating}</p>
+							<p>Release Year: ${game.releaseDate}</p>
+					</div>
+					<div class="col-2">
+					</div>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<div class="row">
+				<div class="col-2">
+				</div>
+				<div class="col-8">
+				</div>
+				<div class="col-2">
+				</div>
+			</div>
+			</div>
+
 
 			<button data-toggle="collapse" data-target="#editform">Edit Game</button>
 
@@ -39,7 +72,8 @@
 						<label>Developer: </label> <input type="text" name="developer" value="${game.developer }"> <br />
 						<label>Publisher: </label> <input type="text" name="publisher" value="${game.publisher }"> <br />
 						<label>Description: </label> <input type="text" size="60" name="description" value="${game.description }"> <br />
-<%-- 						<label>ESRB Rating: </label> <input type="text" name="esrbRating" value="${game.esrbRating }"> <br /> --%>						<p>Select ESRB Rating:</p>
+<%-- 						<label>ESRB Rating: </label> <input type="text" name="esrbRating" value="${game.esrbRating }"> <br /> --%>
+						<label>Select ESRB Rating:</label>
 						<select name="esrbRating">
 							<option value="RP">RP</option>
 							<option value="eC">eC</option>

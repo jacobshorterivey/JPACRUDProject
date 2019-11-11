@@ -52,10 +52,11 @@ body {
   text-align: center;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-size: 100% 100%;
-  background-color: #2A4766;
-  background-image: url('https://www.tokkoro.com/picsup/3072936-black-and-white_blur_dark_equipment_indoors_joystick.jpg');
+  /* background-color: #2A4766; */
+  background-color: #18304B;
+  background-image: url('joystick60.png');
   /* position: absolute;
   z-index: -1;
   background-size: cover;
