@@ -7,16 +7,19 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+
 
 <title>Add a Game!</title>
 </head>
 <body>
+<jsp:include page="navbar.jsp" />
 
 <form action="createGame.do" method="POST" modelAttribute="game">
-		<label>Title: </label> <input type="text" name="title"> <br /> 
-		<label>Developer: </label> <input type="text" name="developer"> <br /> 
-		<label>Publisher: </label> <input type="text" name="publisher"> <br /> 
-		<label>Description: </label> <input type="text" size="60" name="description"> <br /> 
+		<label>Title: </label> <input type="text" name="title"> <br />
+		<label>Developer: </label> <input type="text" name="developer"> <br />
+		<label>Publisher: </label> <input type="text" name="publisher"> <br />
+		<label>Description: </label> <input type="text" size="60" name="description"> <br />
 		<!-- <label>ESRB Rating: </label> <input type="text" name="esrbRating"> <br /> -->
 		<label>ESRB Rating: </label> <select name="esrbRating">
 			<option value="RP">RP</option>
@@ -25,10 +28,10 @@
 			<option value="T">T</option>
 			<option value="M">M</option>
 			<option value="AO">AO</option>
-		</select> <br /> 
-		<label>Metacritic Score (0-100): </label> <input type="text" name="metacriticScore"> <br /> 
-		<label>Release Date (YYYY-MM-DD): </label> <input type="text" name="releaseDate"> <br /> 
-		<label>Cover Art (URL): </label> <input type="text" name="boxartURL"> <br /> 
+		</select> <br />
+		<label>Metacritic Score (0-100): </label> <input type="text" name="metacriticScore"> <br />
+		<label>Release Date (YYYY-MM-DD): </label> <input type="text" name="releaseDate"> <br />
+		<label>Cover Art (URL): </label> <input type="text" name="boxartURL"> <br />
 		<input type="submit" value="Add Game">
 </form>
 

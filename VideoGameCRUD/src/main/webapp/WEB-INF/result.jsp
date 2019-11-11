@@ -11,6 +11,7 @@
 <title>Search Results</title>
 </head>
 <body>
+	<jsp:include page="navbar.jsp" />
 	<div>
 		<c:if test="${game == null}">
 			<h1>No game found. Please go back and try again.</h1>
@@ -28,16 +29,16 @@
 				<li>ESRB Rating: ${game.esrbRating}</li>
 				<li>Release Year: ${game.releaseDate}</li>
 			</ul>
-			
+
 			<button data-toggle="collapse" data-target="#editform">Edit Game</button>
 
 			<div id="editform" class="collapse">
 			<form action="updateGame.do" method="POST" modelAttribute="game">
-				  		<input type="hidden" name="oldGameId" value="${game.id }"> 
-						<label>Title: </label><input type="text" name="title"value="${game.title }"> <br /> 
-						<label>Developer: </label> <input type="text" name="developer" value="${game.developer }"> <br /> 
-						<label>Publisher: </label> <input type="text" name="publisher" value="${game.publisher }"> <br /> 
-						<label>Description: </label> <input type="text" size="60" name="description" value="${game.description }"> <br /> 
+				  		<input type="hidden" name="oldGameId" value="${game.id }">
+						<label>Title: </label><input type="text" name="title"value="${game.title }"> <br />
+						<label>Developer: </label> <input type="text" name="developer" value="${game.developer }"> <br />
+						<label>Publisher: </label> <input type="text" name="publisher" value="${game.publisher }"> <br />
+						<label>Description: </label> <input type="text" size="60" name="description" value="${game.description }"> <br />
 <%-- 						<label>ESRB Rating: </label> <input type="text" name="esrbRating" value="${game.esrbRating }"> <br /> --%>						<p>Select ESRB Rating:</p>
 						<select name="esrbRating">
 							<option value="RP">RP</option>
@@ -48,22 +49,22 @@
 							<option value="AO">AO</option>
 						</select> <br />
 						<label>Metacritic Score: </label> <input type="text" name="metacriticScore" value="${game.metacriticScore }"> <br />
-						<label>Release Date: </label> <input type="text" name="releaseDate" value="${game.releaseDate }"> <br /> 
-						<label>Cover Art URL: </label> <input type="text" name="boxartURL" value="${game.boxartURL }"> <br /> 
-						
+						<label>Release Date: </label> <input type="text" name="releaseDate" value="${game.releaseDate }"> <br />
+						<label>Cover Art URL: </label> <input type="text" name="boxartURL" value="${game.boxartURL }"> <br />
+
 						<input type="submit" value="Update Game Info">
 					</form>
 			</div>
-			
-			
+
+
 <%-- 			<button type="button" class="collapsible">Edit Game</button>
 				<div class="content">
 				  	<form action="updateGame.do" method="POST" modelAttribute="game">
-				  		<input type="hidden" name="oldGameId" value="${game.id }"> 
-						<label>Title: </label><input type="text" name="title"value="${game.title }"> <br /> 
-						<label>Developer: </label> <input type="text" name="developer" value="${game.developer }"> <br /> 
-						<label>Publisher: </label> <input type="text" name="publisher" value="${game.publisher }"> <br /> 
-						<label>Description: </label> <input type="text" size="60" name="description" value="${game.description }"> <br /> 
+				  		<input type="hidden" name="oldGameId" value="${game.id }">
+						<label>Title: </label><input type="text" name="title"value="${game.title }"> <br />
+						<label>Developer: </label> <input type="text" name="developer" value="${game.developer }"> <br />
+						<label>Publisher: </label> <input type="text" name="publisher" value="${game.publisher }"> <br />
+						<label>Description: </label> <input type="text" size="60" name="description" value="${game.description }"> <br />
 						<select name="esrbRating">
 							<option value="RP">RP</option>
 							<option value="eC">eC</option>
@@ -73,13 +74,13 @@
 							<option value="AO">AO</option>
 						</select> <br />
 						<label>Metacritic Score: </label> <input type="text" name="metacriticScore" value="${game.metacriticScore }"> <br />
-						<label>Release Date: </label> <input type="text" name="releaseDate" value="${game.releaseDate }"> <br /> 
-						<label>Cover Art URL: </label> <input type="text" name="length" value="${game.boxartURL }"> <br /> 
-						
+						<label>Release Date: </label> <input type="text" name="releaseDate" value="${game.releaseDate }"> <br />
+						<label>Cover Art URL: </label> <input type="text" name="length" value="${game.boxartURL }"> <br />
+
 						<input type="submit" value="Update Game Info">
 					</form>
 				</div> --%>
-			
+
 			<form action="" method="POST">
 				<button type="submit" formaction="destroyGame.do" name="gameId" value="${game.id}">Delete Game</button>
 			</form>
