@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">GameDB</a>
+    <a class="navbar-brand" href="goHome.do">GameDB</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,7 +25,7 @@
           MENU
         </a>
           <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item dropdown-item-text" href="/">Home</a>
+            <a class="dropdown-item dropdown-item-text" href="goHome.do">Home</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item dropdown-item-text" href="goToCreateGame.do">Add A Game</a>
           </div>

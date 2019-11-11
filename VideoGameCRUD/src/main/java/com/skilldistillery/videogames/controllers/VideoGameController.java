@@ -19,7 +19,7 @@ public class VideoGameController {
 	@Autowired
 	private VideoGameDAO dao;
 
-	@RequestMapping(path = "/")
+	@RequestMapping(path = {"/","goHome.do"})
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
 
@@ -83,7 +83,7 @@ public class VideoGameController {
 	public ModelAndView destroyVideoGame(@RequestParam("gameId") int id) {
 		ModelAndView mv = new ModelAndView();
 		dao.removeGame(id);
-		mv.setViewName("redirect:/");
+		mv.setViewName("redirect:goHome.do");
 		return mv;
 	}
 
