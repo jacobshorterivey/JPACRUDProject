@@ -20,10 +20,14 @@
 				<div>
 					<h1>Jacob's Video Game DB</h1>
 					<form action="findGameById.do" class="" method="GET">
+						<div class="form-group">
 						<input type="text" name="gameId"> <input type="submit" value="Find Game by ID">
+						</div>
 					</form>
 					<form action="goToCreateGame.do" class="" method="GET">
+						<div class="form-group">
 						<input type="submit" value="Add a Game">
+						</div>
 					</form>
 					<div>
 						</br>
