@@ -2158,6 +2158,7 @@ input[type="button"].btn-block {
   right: 0;
   left: auto; }
 
+
 @media (min-width: 576px) {
   .dropdown-menu-sm-left {
     right: auto;
@@ -2305,13 +2306,18 @@ input[type="button"].btn-block {
   padding: 0.5rem 1.5rem;
   margin-bottom: 0;
   font-size: 0.875rem;
-  color: #6c757d;
+  color: yellow;
   white-space: nowrap; }
+
+  .dropdown-toggle-text {
+    color: #F7C119 !important; 
+
+  }
 
 .dropdown-item-text {
   display: block;
   padding: 0.25rem 1.5rem;
-  color: yellow; }
+  color: #F7C119; }
 
 .btn-group,
 .btn-group-vertical {

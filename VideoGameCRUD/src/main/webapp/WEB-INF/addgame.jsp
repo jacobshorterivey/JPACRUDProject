@@ -33,7 +33,7 @@
       			<option value="M">M</option>
       			<option value="AO">AO</option>
         		</select> <br />
-        		<label>Metacritic Score (0-100): </label> <input type="text" name="metacriticScore" pattern="^[1-9][0-9]?$|^100$" required> <br />
+        		<label>Metacritic Score (1-100): </label> <input type="text" name="metacriticScore" pattern="^[1-9][0-9]?$|^100$" required> <br />
         		<label>Release Date (YYYY-MM-DD): </label> <input type="text" name="releaseDate" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required> <br />
         		<label>Cover Art (URL): </label> <input type="text" name="boxartURL"> <br />
         		<input type="submit" value="Add Game">
